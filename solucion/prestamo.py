@@ -15,7 +15,10 @@ class Prestamo:
         return self.dias_transcurridos > 7
 
     def dias_de_retraso(self):
-        pass
+        if self.esta_vencido() is False:
+            return 0
+        else:
+            return self.dias_transcurridos - 7
 
     def resumen(self):
         pass
