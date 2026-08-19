@@ -12,7 +12,7 @@ class Prestamo:
         self.dias_transcurridos = dias_transcurridos
 
     def esta_vencido(self):
-        pass
+        return self.dias_transcurridos > 7
 
     def dias_de_retraso(self):
         pass
