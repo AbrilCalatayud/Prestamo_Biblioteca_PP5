@@ -21,4 +21,7 @@ class Prestamo:
             return self.dias_transcurridos - 7
 
     def resumen(self):
-        pass
+        if not self.esta_vencido():
+            return f"{self.titulo} — {self.nombre_socio} — en término"
+        
+        return f"{self.titulo} — {self.nombre_socio} — vencido ({self.dias_de_retraso()} días)"
