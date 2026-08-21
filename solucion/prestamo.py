@@ -1,5 +1,5 @@
 class Prestamo:
-    def __init__(self, titulo, nombre_socio, dias_transcurridos):
+    def __init__(self, titulo: str, nombre_socio: str, dias_transcurridos: int) -> None:
         if not titulo.strip():
             raise ValueError("El titulo no puede estar vacio")
         if not nombre_socio.strip():
@@ -11,16 +11,16 @@ class Prestamo:
         self.nombre_socio = nombre_socio
         self.dias_transcurridos = dias_transcurridos
 
-    def esta_vencido(self):
+    def esta_vencido(self) -> bool:
         return self.dias_transcurridos > 7
 
-    def dias_de_retraso(self):
+    def dias_de_retraso(self) -> int:
         if not self.esta_vencido():
             return 0
         
         return self.dias_transcurridos - 7
 
-    def resumen(self):
+    def resumen(self) -> str:
         if not self.esta_vencido():
             return f"{self.titulo} — {self.nombre_socio} — en término"
         
