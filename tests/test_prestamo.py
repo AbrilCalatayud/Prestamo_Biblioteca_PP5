@@ -25,3 +25,11 @@ class TestPrestamo:
     def test_prestamo_retraso_cero(self):
         prestamo = Prestamo("El Principito", "Pablo Aguirre", 4)
         assert prestamo.dias_de_retraso() == 0
+
+    def test_resumen_prestamo_en_termino(self):
+        prestamo = Prestamo("El Principito", "Pablo Aguirre", 4)
+        assert prestamo.resumen() == "El Principito — Pablo Aguirre — en término"
+
+    def test_resumen_prestamo_vencido(self):
+        prestamo = Prestamo("El Principito", "Pablo Aguirre", 9)
+        assert prestamo.resumen() == "El Principito — Pablo Aguirre — vencido (2 días)"
