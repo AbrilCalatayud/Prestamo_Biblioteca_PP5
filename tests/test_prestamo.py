@@ -2,6 +2,8 @@ import pytest
 from solucion.prestamo import Prestamo
 
 class TestPrestamo:
+    """Tests unitarios para la clase Prestamo"""
+
     def test_titulo_vacio_lanza_value_error(self) -> None:
         with pytest.raises(ValueError):
             Prestamo("", "Pablo Aguirre", 4)
