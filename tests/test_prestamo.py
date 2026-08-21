@@ -15,10 +15,13 @@ class TestPrestamo:
             Prestamo("El Principito", "Pablo Aguirre", -4)
 
     def test_prestamo_en_termino(self):
-        pass
+        prestamo = Prestamo("El Principito", "Pablo Aguirre", 4)
+        assert prestamo.esta_vencido() is False
 
     def test_prestamo_vencido(self):
-        pass
+        prestamo = Prestamo("El Principito", "Pablo Aguirre", 9)
+        assert prestamo.esta_vencido() is True
 
     def test_prestamo_retraso_cero(self):
-        pass
+        prestamo = Prestamo("El Principito", "Pablo Aguirre", 4)
+        assert prestamo.dias_de_retraso() == 0
